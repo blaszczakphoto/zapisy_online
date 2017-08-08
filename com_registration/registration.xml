@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="3.7.3" method="upgrade">
+
+    <name>Registration</name>
+    <creationDate>July 2017</creationDate>
+    <author>Mariusz Błaszczak - profiart</author>
+    <authorEmail>mariusz.blaszczak@gmail.com</authorEmail>
+    <authorUrl>http://profiart.pl</authorUrl>
+    <version>2.0</version>
+    <description>Zapisy online na wycieczki PTTK</description>
+
+    <install> <!-- Runs on install -->
+        <sql>
+            <file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+        </sql>
+    </install>
+    <uninstall> <!-- Runs on uninstall -->
+        <sql>
+            <file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+        </sql>
+    </uninstall>
+
+    <files folder="site">
+        <folder>controllers</folder>
+        <folder>forms</folder>
+        <folder>models</folder>
+        <folder>presenters</folder>
+        <folder>views</folder>
+        <filename>controller.php</filename>
+        <filename>index.html</filename>
+        <filename>registration.php</filename>
+    </files>
+
+    <languages folder="site/language">
+        <language tag="en-GB">en-GB/en-GB.com_registration.ini</language>
+    </languages>
+
+    <administration>
+        <menu link='index.php?option=com_registration'>COM_REGISTRATION_MENU</menu>
+        <files folder="admin">
+            <folder>controllers</folder>
+            <folder>helpers</folder>
+            <folder>sql</folder>
+            <folder>mailers</folder>
+            <folder>models</folder>
+            <folder>presenters</folder>
+            <folder>sql</folder>
+            <folder>tables</folder>
+            <folder>views</folder>
+            <filename>access.xml</filename>
+            <filename>config.xml</filename>
+            <filename>controller.php</filename>
+            <filename>index.html</filename>
+            <filename>registration.php</filename>
+        </files>
+        <languages folder="admin/language">
+            <language tag="en-GB">en-GB/en-GB.com_registration.ini</language>
+            <language tag="en-GB">en-GB/en-GB.com_registration.sys.ini</language>
+        </languages>
+    </administration>
+</extension>

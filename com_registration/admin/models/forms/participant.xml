@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <fieldset
+            name="details"
+            label="Detale uczestnika"
+            >
+        <field
+                name="id"
+                type="hidden"
+                />
+        <field
+            name="event_id"
+            type="sql"
+            default="1"
+            label="Wybierz wydarzenie"
+            required="true"
+            key_field="id"
+            query="SELECT id, name as event_id FROM #__registration_events"
+            />
+        <field
+                name="name"
+                type="text"
+                label="Imię"
+                size="40"
+                class="inputbox validate-name"
+                required="true"
+                default=""
+                />
+        <field
+                name="surname"
+                type="text"
+                label="Nazwisko"
+                size="40"
+                class="inputbox validate-name"
+                required="true"
+                default=""
+                />
+        <field
+                name="pttk"
+                type="text"
+                label="Numer karty PTTK"
+                size="40"
+                class="inputbox validate-name"
+                default=""
+                />
+        <field
+                name="email"
+                type="text"
+                label="Adres e-mail"
+                size="40"
+                class="inputbox validate-name"
+                default=""
+                />
+        <field
+                name="phone"
+                type="text"
+                label="Numer telefonu"
+                size="40"
+                class="inputbox validate-name"
+                default=""
+                />
+        <field
+                name="address"
+                type="textarea"
+                label="Adres"
+                size="40"
+                class="inputbox validate-name"
+                default=""
+                />
+        <field
+            name="paid"
+            type="radio"
+            label="Zapłacił?"
+            description="Czy uczestnik zapłacił już wpisowe?"
+            class="btn-group btn-group-yesno"
+            default="0"
+            >
+            <option value="1">Tak</option>
+            <option value="0">Nie</option>
+        </field>
+
+
+    </fieldset>
+</form>

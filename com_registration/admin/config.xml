@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+    <fieldset
+            name="general"
+            label="Ogólne opcje"
+                description="Podstawowa konfiguracja komponentu zapisy online"
+            >
+        <field
+                name="sender_email"
+                type="text"
+                label="Adres email nadawcy"
+                description="Z tego adresu email będą wysyłane emaile do uczestników oraz na ten adres email uczestnicy będą odpowiadać na otrzymane emaile."
+                default="poczta@mazury.pttk.pl"
+                >
+        </field>
+        <field
+                name="sender_name"
+                type="text"
+                label="Nazwa nadawcy"
+                description="Uczestnicy będą otrzymywać wiadomości email podpisane tym imieniem."
+                default="Oddział Warmińsko - Mazurski PTTK"
+                >
+        </field>
+        <field
+                name="bank_details_email"
+                type="textarea"
+                rows="10"
+                label="Dane do przelewu (wysyłane emailem)"
+                description="Szczegółowa informacja na jaki numer konta przelać wpisowe."
+                default="Pieniądze proszę przelać na konto: mBank 00 0000 0000 0000 0000 W tytule proszę wpisać imię i nazwisko oraz nazwę wycieczki"
+                >
+        </field>
+        <field
+                name="bank_details_site"
+                type="editor"
+                label="Dane do przelewu (wyświetlane na stronie eventu)"
+                description="Szczegółowa informacja na jaki numer konta przelać wpisowe."
+                filter="JComponentHelper::filterText"
+                buttons="true"
+                hide="readmore,pagebreak,module,article,contact,menu"
+                default="Pieniądze proszę przelać na konto: mBank 00 0000 0000 0000 0000 W tytule proszę wpisać imię i nazwisko oraz nazwę wycieczki"
+                >
+        </field>
+        <field
+                name="email_footer"
+                type="textarea"
+                rows="10"
+                label="Stopka email"
+                description="Stopka dołączana do każdego emaila."
+                default="Oddział Warmińsko- Mazurski PTTK\npoczta@mazury.pttk.pl\n+48 888 666 999"
+                >
+        </field>
+    </fieldset>
+    <fieldset
+            name="confirmation_email"
+            label="E-mail z potwierdzeniem zapisu na wycieczkę"
+            description="Konfiguracja e-maila z potwierdzeniem rejestracji na wycieczke.\nDostępne zmienne:\n{PARTICIPANT_NAME} - Imię uczestnika imprezy.\n{EVENT_NAME} - Nazwa imprezy.\n{EVENT_DATE} - Data imprezy. Jeśli impreza trwa więcej niż jeden dzień wyświetlany będzie przedział.\n{EVENT_REGISTRATION_FEE} - Wpisowe w PLN\n{BANK_INFO} - Szczegóły płatności. Numer konta bankowego i reszta informacji potrzebnych do zrobienia przelewu.\n{EVENT_EXTRA_INFO} - Dodatkowe informacje na temat imprezy.\n{MAIL_FOOTER} - Stopka zdefiniowana w zakładce ogóle.\n{ACTIVATION_URL} - Adres url do aktywacji użytkownika."
+            >
+        <field
+                name="confirmation_email_subject"
+                type="text"
+                label="Tytuł wiadomości"
+                description="Tytuł wiadomości e-mail z potwierdzeniem rejestracji na wycieczke"
+                default="Potwierdź swoje uczestnictwo - PTTK - {EVENT_NAME}"
+
+                />
+        <field
+                name="confirmation_email_template"
+                type="textarea"
+                label="Szablon wiadomości"
+                rows="10"
+                description="Treść wiadomości e-mail z potwierdzeniem rejestracji na wycieczkę."
+                default="Witamy, poniżej znajduje się link do potwierdzenia zapisu w imprezie turystycznej na portalu www.mazury.pttk.pl"
+                >
+        </field>
+    </fieldset>
+    <fieldset
+            name="cancel_email"
+            label="E-mail z informacją o anulacji zapisu"
+            description="Konfiguracja e-maila z potwierdzeniem anulacji zapisu na wycieczkę"
+            >
+        <field
+                name="cancel_email_title"
+                type="text"
+                label="Tytuł wiadomości"
+                description="Tytuł wiadomości e-mail z detalami o anulacji zapisu na wycieczkę"
+                default="Państwa zgłoszenie zostało skreślone z listy uczestników."
+
+                />
+        <field
+                name="cancel_email_template"
+                type="textarea"
+                rows="10"
+                label="Treść wiadomości (bez stopki)"
+                description="Treść wiadomości e-mail z detalami o anulacji zapisu na wycieczkę"
+                default="Witam, Państwa zgłoszenie zostało skreślone z listy uczestników."
+                >
+        </field>
+    </fieldset>
+    <fieldset
+            name="notify_admin_email"
+            label="E-mail do organizatora o nowym uczestniku"
+            description="Konfiguracja e-maila z informacją o nowym uczstniku."
+            >
+        <field
+                name="notify_admin_email_title"
+                type="text"
+                label="Tytuł wiadomości"
+                description="Tytuł wiadomości e-mail z detalami o anulacji zapisu na wycieczkę"
+                default="Państwa zgłoszenie zostało skreślone z listy uczestników."
+
+                />
+        <field
+                name="notify_admin_email_template"
+                type="textarea"
+                rows="10"
+                label="Szaablon wiadomości"
+                description="Treść wiadomości e-mail z detalami o anulacji zapisu na wycieczkę"
+                default="Witam, Państwa zgłoszenie zostało skreślone z listy uczestników."
+                >
+        </field>
+    </fieldset>
+    <fieldset
+            name="pages"
+            label="Strony"
+            description="Konfiguracja treści różnych stron wyświetlanych w komponencie."
+            >
+        <field
+                name="activation_success_page"
+                type="editor"
+                label="Aktywacja się powiodła"
+                description="Strona wyświetlana uczestnikowi, po kliknięciu w link aktywacyjny."
+                filter="JComponentHelper::filterText"
+                buttons="true"
+                hide="readmore,pagebreak,module,article,contact,menu"
+                default=""
+                >
+        </field>
+
+        <field
+                name="registration_form_sent_page"
+                type="editor"
+                label="Dziękujemy za rejestracje"
+                description="Strona wyświetlana uczestnikowi, po kliknięciu wysłania formularza rejestracyjnego."
+                filter="JComponentHelper::filterText"
+                buttons="true"
+                hide="readmore,pagebreak,module,article,contact,menu"
+                default=""
+                >
+        </field>
+    </fieldset>
+</config>

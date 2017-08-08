@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+ <extension type="package" version="3.7.3" method="upgrade">
+ <name>Registration Package</name>
+ <author>Mariusz Błaszczak - profiart</author>
+ <creationDate>July 2017</creationDate>
+ <packagename>registration</packagename>
+ <version>2.0.0</version>
+ <url>http://profiart.pl/</url>
+ <packager>Mariusz Błaszczak - profiart</packager>
+ <packagerurl>http://profiart.pl/</packagerurl>
+ <description>Paczka instalacyjna komponentu zapisy online</description>
+ <files folder="packages">
+   <file type="component" id="com_registration" >com_registration.zip</file>
+   <file type="library" id="tcpdf">tcpdf.zip</file>
+ </files>
+ </extension>

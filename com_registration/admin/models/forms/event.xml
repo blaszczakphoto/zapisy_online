@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <fieldset
+            name="details"
+            label="Detale imprezy"
+            >
+        <field
+                name="id"
+                type="hidden"
+                />
+        <field
+                name="name"
+                type="text"
+                label="COM_REGISTRATION_NAME_LABEL"
+                description="COM_REGISTRATION_NAME_DESC"
+                size="40"
+                class="inputbox validate-name"
+                required="true"
+                default=""
+                />
+
+
+        <field
+            name="event_date"
+            type="calendar"
+            label="Data rozpoczęcia imprezy"
+            description="Data kiedy impreza się zaczyna"
+            size="22"
+            translateformat="true"
+            showtime="true"
+            filter="user_utc"
+            required="true"
+        />
+
+        <field
+            name="event_date_end"
+            type="calendar"
+            label="Data zakończenia imprezy"
+            description="Data kiedy impreza się kończy"
+            size="22"
+            translateformat="true"
+            showtime="true"
+            filter="user_utc"
+            required="true"
+        />
+
+        <field
+            name="registration_date"
+            type="calendar"
+            label="Data zakończenia zapisów"
+            description="Data kiedy kończą się zapisy"
+            size="22"
+            translateformat="true"
+            showtime="true"
+            filter="user_utc"
+            required="true"
+        />
+
+        <field
+                name="registration_fee"
+                type="text"
+                label="Opłata wpisowa (PLN)"
+                description="Ile trzeba zapłacić za wpisowe"
+                size="40"
+                class="inputbox"
+                required="true"
+                default="0.0"
+                />
+
+        <field
+            name="places"
+            type="text"
+            label="Liczba miejsc"
+            description="Ile osób może wziąć udział maksymalnie?"
+            size="40"
+            class="inputbox"
+            required="true"
+            default="10"
+            />
+
+        <field
+            name="link"
+            type="text"
+            label="Link do wydarzenia"
+            description="Link do miejsca gdzie będzie więcej na temat imprezy"
+            size="40"
+            class="inputbox"
+            default=""
+            />
+
+        <field
+                name="catid"
+                type="category"
+                extension="com_registration"
+                class="inputbox"
+                default=""
+                label="Kategoria imprezy"
+                description="COM_REGISTRATION_FIELD_CATID_DESC"
+                required="true"
+                >
+            <option value="0">JOPTION_SELECT_CATEGORY</option>
+        </field>
+
+
+        <field
+            name="extra_info"
+            type="editor"
+            label="Dodatkowe informacje"
+            description="Dodatkowe informacje o imprezie"
+            filter="JComponentHelper::filterText"
+            buttons="true"
+            hide="readmore,pagebreak,module,article,contact,menu"
+        />
+    </fieldset>
+</form>
