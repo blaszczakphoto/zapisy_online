@@ -1,5 +1,5 @@
 #!/bin/bash
-read -r -p "Copy from /var/www/joomlatest? [y/n]" response
+read -r -p "Copy from /var/www/joomlatest? [enter/anything else]" response
 response=${response,,}
 if [[ $response =~ ^(yes|y| ) ]] | [ -z $response ]; then
   echo "Performing rsync"
